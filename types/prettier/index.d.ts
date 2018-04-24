@@ -120,6 +120,7 @@ export interface Parser {
     hasPragma?: (text: string) => boolean;
     locStart: (node: any) => number;
     locEnd: (node: any) => number;
+    preprocess?: (text: string, options: ParserOptions) => string;
 }
 
 export interface Printer {
