@@ -109,7 +109,7 @@ export interface ParserOptions extends RequiredOptions {
 }
 
 export interface Plugin {
-    languages: SupportLanguage;
+    languages: SupportLanguage[];
     parsers: { [parserName: string]: Parser };
     printers: { [astFormat: string]: Printer };
 }
@@ -232,7 +232,7 @@ export function clearConfigCache(): void;
 
 export interface SupportLanguage {
     name: string;
-    since: string;
+    since?: string;
     parsers: string[];
     group?: string;
     tmScope: string;
